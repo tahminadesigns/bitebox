@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Search, ShoppingCart, User } from "lucide-react";
 
+
 export default function Header() {
   return (
     <header className="absolute top-0 left-0 w-full z-50">
@@ -20,17 +21,45 @@ export default function Header() {
 
         {/* Nav */}
         <nav className="hidden md:flex gap-10 text-sm text-gray-200">
-          {["Home", "Menu", "About", "Contact"].map((item) => (
-            <motion.a
-              whileHover={{ y: -2 }}
-              transition={{ duration: 0.3 }}
-              key={item}
+          {/* Home */}
+          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.3 }}>
+            <Link
+              href="/"
+              className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Home
+            </Link>
+          </motion.div>
+
+          {/* Menu */}
+          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.3 }}>
+            <Link
+              href="/menu"
+              className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Menu
+            </Link>
+          </motion.div>
+
+          {/* About */}
+          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.3 }}>
+            <Link
               href="#"
               className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full"
             >
-              {item}
-            </motion.a>
-          ))}
+              About
+            </Link>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.3 }}>
+            <Link
+              href="#"
+              className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Contact
+            </Link>
+          </motion.div>
         </nav>
 
         {/* Actions */}
