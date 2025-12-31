@@ -79,6 +79,7 @@ export default function Header() {
           {/* SIGN IN */}
           <motion.button
             whileHover={{ scale: 1.05 }}
+            onClick={() => router.push("auth/sign-in")}
             className="flex items-center gap-2 px-5 py-2 border border-[#D4AF37] text-[#D4AF37] rounded-full hover:bg-[#D4AF37] hover:text-black transition"
           >
             <User size={16} />
