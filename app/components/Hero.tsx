@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -13,10 +14,10 @@ export default function Hero() {
       }}
     >
       {/* Blur + dark overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-m"></div>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md pointer-events-none"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 pt-32">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,28 +40,32 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-10 flex gap-6">
-          <motion.button
-            whileHover={{ scale: 1.08 }}
-            className="px-8 py-4 bg-[#D4AF37] text-black font-semibold rounded-full shadow-xl"
-          >
-            Order Now
-          </motion.button>
+          {/* Order Now → Sign In */}
+          <Link href="/signin">
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              className="px-8 py-4 bg-[#D4AF37] text-black font-semibold rounded-full shadow-xl"
+            >
+              Order Now
+            </motion.button>
+          </Link>
 
-          <motion.button
-            whileHover={{ scale: 1.08 }}
-            className="px-8 py-4 border border-[#D4AF37] text-[#D4AF37] rounded-full hover:bg-[#D4AF37] hover:text-black transition"
-          >
-            View Menu
-          </motion.button>
+          {/* View Menu → Menu */}
+          <Link href="/menu">
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              className="px-8 py-4 border border-[#D4AF37] text-[#D4AF37] rounded-full hover:bg-[#D4AF37] hover:text-black transition"
+            >
+              View Menu
+            </motion.button>
+          </Link>
         </div>
       </div>
 
       {/* Big faded text */}
-      <h2 className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] font-bold text-white/5 select-none">
+      <h2 className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[120px] md:text-[180px] font-bold text-white/5 select-none pointer-events-none">
         BITEBOX
       </h2>
     </section>
   );
 }
-
-
