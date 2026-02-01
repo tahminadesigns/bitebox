@@ -16,7 +16,7 @@ BiteBox is a modern, luxury-inspired food delivery web experience focused on pre
 - Lucide Icons
 
 ##  Live Demo
-https://vercel.com/tahminadesigns-projects/bitebox/EecGb1ANFbzpphPzTxonTbo9myWU
+bitebox-git-main-tahminadesigns-projects.vercel.app
 
 ## Preview
 Screenshots will be added soon.
